@@ -60,7 +60,7 @@ def kmeans(x,k):
             clus[i]= np.round(np.argmin(dist[i,:]))
             
         # Compute new centroids
-        oldcent=cent
+        oldcent=np.copy(cent)
         for j in range(k):
             sel=clus==j
             if sum(sel)>0:
